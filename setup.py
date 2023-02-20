@@ -5,7 +5,7 @@ long_description = (this_directory / "README").read_text()
 
 setup(
     name="extrarandom",
-    version="1.0.0",
+    version="1.0.1",
     description="More random utils",
     long_description=long_description,
     long_description_content_type='text/markdown',
