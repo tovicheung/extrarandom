@@ -1,0 +1,17 @@
+[build-system]
+requires = ["setuptools>=61.0.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "extrarandom"
+version = "1.0.2"
+description = "More random utils"
+readme = "README.md"
+authors = [{ name = "tovicheung" }]
+license = { file = "LICENSE" }
+classifiers = [
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python",
+    "Programming Language :: Python :: 3",
+]
+keywords = ["random"]

@@ -1,7 +1,8 @@
 LICENSE
-README
+README.md
+pyproject.toml
 setup.cfg
-setup.py
+extrarandom/__init__.py
 extrarandom.egg-info/PKG-INFO
 extrarandom.egg-info/SOURCES.txt
 extrarandom.egg-info/dependency_links.txt
