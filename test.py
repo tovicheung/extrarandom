@@ -12,4 +12,3 @@ else:
     assert False
 
 assert randhex(hex(9), hex(9)) == hex(9)
-print(__file__)
