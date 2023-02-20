@@ -1,6 +1,7 @@
 """extrarandom: more utilities for random
 This module is built on top of the builtin random module
 """
+
 import random
 import string
 
@@ -73,3 +74,7 @@ randletter = _inst.randletter
 randhex = _inst.randhex
 randuppercase = _inst.randuppercase
 randlowercase = _inst.randlowercase
+strinsert = _inst.strinsert
+strinsertin = _inst.strinsertin
+listinsert = _inst.listinsert
+listinsertin = _inst.listinsertin
