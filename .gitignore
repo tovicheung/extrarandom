@@ -1,2 +1,2 @@
-extrarandom.egg-info/*
-dist/*
+extrarandom.egg-info/
+dist/
