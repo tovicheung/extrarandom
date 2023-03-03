@@ -47,3 +47,41 @@ listinsert(mylist, -999)
 
 # listinsertin is similar to strinsertin
 ```
+
+Random permutation/combination
+```py
+perm = permutation(iterable)
+comb = permutation(iterable)
+```
+
+Range objects
+```py
+some_range_between_6_and_9 = subrange(range(6, 9))
+# possible values:
+# range(6, 7), range(6, 9), range(8, 9) etc.
+# start will not be equal to stop
+```
+
+Random iteration
+```py
+mylist = [1, 2, 3, 4, 5]
+for i in randiter(mylist, total=8):
+    print(i)
+# print 8 random elements from mylist
+```
+
+## Not so useful stuff (yet)
+
+Infinite iterators
+```py
+for b in randboolstream():
+    print(b)
+# infinite random boolean stream lol
+```
+
+Random attribute manipulation (not too useful tho)
+```py
+getrandattr(obj)
+setrandattr(obj, value)
+delrandattr(obj)
+```
