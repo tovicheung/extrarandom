@@ -87,6 +87,11 @@ class ExtraRandom(_random.Random):
         indices = sorted(self.sample(range(n), r))
         return tuple(pool[i] for i in indices)
     
+    def subrange(self, rng: range):
+        start = self.randint(rng.start, rng.stop-1)
+        stop = self.randint(start+1, rng.stop)
+        return range(start, stop, rng.step)
+    
 _inst = ExtraRandom()
 randbool = _inst.randbool
 randbools = _inst.randbools
@@ -104,8 +109,10 @@ setrandattr = _inst.setrandattr
 delrandattr = _inst.delrandattr
 permutation = _inst.permutation
 combination = _inst.combination
+subrange = _inst.subrange
 
-__all__ = []
-for _name in globals().keys():
-    if not _name.startswith("_"):
-        __all__.append(_name)
+# __all__ = []
+# _k = globals().copy().keys()
+# for _name in _k:
+#     if not _name.startswith("_"):
+#         __all__.append(_name)
