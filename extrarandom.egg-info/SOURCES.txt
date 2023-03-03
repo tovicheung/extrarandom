@@ -4,6 +4,7 @@ pyproject.toml
 setup.cfg
 extrarandom/__init__.py
 extrarandom/extrarandom.py
+extrarandom/iterator.py
 extrarandom.egg-info/PKG-INFO
 extrarandom.egg-info/SOURCES.txt
 extrarandom.egg-info/dependency_links.txt
