@@ -1,7 +1,7 @@
-import random
-import string
+import random as _random
+import string as _string
 
-class ExtraRandom(random.Random):
+class ExtraRandom(_random.Random):
     def randbool(self):
         """Returns a random boolean"""
         return bool(self.randint(0, 1))
@@ -12,15 +12,15 @@ class ExtraRandom(random.Random):
     
     def randletter(self):
         """Returns a random letter (uppercase and lowercase)"""
-        return self.choice(string.ascii_letters)
+        return self.choice(_string.ascii_letters)
     
     def randuppercase(self):
         """Returns a random uppercase letter"""
-        return self.choice(string.ascii_uppercase)
+        return self.choice(_string.ascii_uppercase)
     
     def randlowercase(self):
         """Returns a random lowercase letter"""
-        return self.choice(string.ascii_letters)
+        return self.choice(_string.ascii_letters)
     
     def randhex(self, a, b):
         """Return random hex in range [a, b], including both end points.
@@ -62,6 +62,30 @@ class ExtraRandom(random.Random):
         Element will not be inserted to the start/end of list"""
         index = self.randint(0, len(x))
         x.insert(index, element)
+
+    def randattr(self, x):
+        return self.choice(dir(x))
+    
+    def getrandattr(self, x):
+        return getattr(x, self.randattr(x))
+    
+    def setrandattr(self, x, value):
+        """Not very useful tho"""
+        setattr(x, self.randattr(x), value)
+    
+    def delrandattr(self, x):
+        delattr(x, self.randattr(x))
+
+    def permutation(self, iterable, r=None):
+        pool = tuple(iterable)
+        r = len(pool) if r is None else r
+        return tuple(self.sample(pool, r))
+    
+    def combination(self, iterable, r):
+        pool = tuple(iterable)
+        n = len(pool)
+        indices = sorted(self.sample(range(n), r))
+        return tuple(pool[i] for i in indices)
     
 _inst = ExtraRandom()
 randbool = _inst.randbool
@@ -74,9 +98,14 @@ strinsert = _inst.strinsert
 strinsertin = _inst.strinsertin
 listinsert = _inst.listinsert
 listinsertin = _inst.listinsertin
+randattr = _inst.randattr
+getrandattr = _inst.getrandattr
+setrandattr = _inst.setrandattr
+delrandattr = _inst.delrandattr
+permutation = _inst.permutation
+combination = _inst.combination
 
-_exclude = ["string", "random"]
-__all__ = list(globals().keys())
-for name in _exclude:
-    __all__.remove(name)
-del name
+__all__ = []
+for _name in globals().keys():
+    if not _name.startswith("_"):
+        __all__.append(_name)

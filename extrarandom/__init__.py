@@ -3,3 +3,4 @@ This module is built on top of the builtin random module
 """
 
 from .extrarandom import *
+from .iterator import *
